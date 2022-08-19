@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style> 
+  img {
+      border: 5px solid #09eac1cf;
+    }
+    #div1 {
+      width: 300px;
+      height: 250px;
+      padding: 30px;
+      border: 2px solid #e7890e;
+    }
+    img {
+      border: 5px solid #09dbeaba;
+    }
+    #div2 {
+      width: 300px;
+      height: 250px;
+      padding: 30px; 
+      border: 2px solid #e7a311;
+    }
+    img {
+      border: #23abcd;
+    }
+    #div3 {
+      width: 300px;
+      height: 250px;
+      padding: 30px; 
+      border: 2px solid #e6d113;
+    }
+.accordion {
+  background-color: rgba(14, 240, 240, 0.929);
+  color: cornsilk;
+  cursor: cell;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  outline: rgb(17, 10, 1);
+  font-size: 25px;
+  font-style: initial;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.active, .accordion:hover {
+  background-color: rgb(2, 10, 16); 
+}
+
+.panel {
+  padding: 30px;
+  display: -moz-groupbox;
+  background-color: palegoldenrod;
+  overflow: scroll;
+}
+</style>
+</head>
+<script>
+  function allowDrop(ev) {
+      ev.preventDefault();
+    }
+
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+
+                                                                                                                                                                                                                                                                                                                                              
+
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+</script>
+<body bgcolor="palegoldenrod"> 
+
+<h2>Accordion</h2>
+
+<button class="accordion">Section 1</button>
+<div class="content">
+  <p>JUJUTSU KAISEN</p>
+</div>
+<div class="panel">    
+<img src="C:/Users/bhavy/Desktop/saturo image.png" width="250px" height="250px">  
+</div>
+
+ <button class="accordion">Section 2</button>
+ <div class="content">
+  <p>OUR NATIONAL FLAG</p>
+ </div>
+
+<div class="panel">
+<img src="C:/Users/bhavy/Desktop/national images.png" width="250px" height="250px">
+</div>
+
+<button class="accordion">Section 3</button>
+<div class="content">
+  <p>ONE PIECE</p>
+</div>
+<div class="panel">
+<img src="C:/Users/bhavy/Desktop/one piece.jpg" width="250px" height="250px">
+</div>
+
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <br>
+  <img id="drag1" src="C:/Users/bhavy/Desktop/saturo image.png" draggable="true" ondragstart="drag(event)"
+    width="300" height="250">
+    <div class="content">
+      <p>JUJUTSU KAISEN</p>
+    </div>
+  <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      
+  <br>
+  <img id="drag2" src="C:/Users/bhavy/Desktop/national images.png" draggable="true" ondragstart="drag(event)"
+    width="300" height="250">
+    <div class="content">
+      <p>OUR NATIONAL FLAG</p>
+     </div>
+  <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>  
+
+  <br>
+  <img id="drag3" src="C:/Users/bhavy/Desktop/one piece.jpg"  draggable="true" ondragstart="drag(event)" 
+  width="300" height="250">
+  <div class="content">
+    <p>ONE PIECE</p>
+  </div>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+</body>
+</html>

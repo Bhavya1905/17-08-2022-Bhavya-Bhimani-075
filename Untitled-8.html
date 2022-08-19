@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<head>
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <style>
+       
+       #draggable {
+        width:250px;
+        height:250px;
+        padding:0.5em;
+        background:yellowgreen;
+       }
+   </style>
+   
+   <script>
+    $(function () {
+        $("#draggable").draggable();
+    });
+    </script>
+    <style>
+        #draggable1 {
+        width:250px;
+        height:250px;
+        padding:0.5em;
+        background:cyan;
+    }
+    </style>
+    </head>
+
+    <body>
+
+        <div id="draggable" class="ui-width-content">
+            <img src="C:/Users/bhavy/Desktop/one piece.jpg" height="250px" width="250px" padding="0.5em">
+
+        </div>
+        <div id="draggable" calss="ui-width-content">
+           <img src="C:/Users/bhavy/Desktop/national images.png" height="250px" width="250px" padding="0.5em">
+        </div>
+   <script>
+   $(function () {
+    $("#draggable").draggable();
+   });
+   </script>
+   
+   <div id="div4" style="border:solid 0.5px;background-color: darkturquoise; height:30px">
+    <span>BHAVYA</span>
+   </div>
+   <script>
+    $("#div4 span").draggable({
+        helper:"clone"
+    });
+    </script>
+    <div id="div5" style="border:solid 0.5px;background-color: palegreen;">
+        <span>TEJAS</span><br /><br />
+    <div id="div6" style="border:solid 0.5px;background-color: paleturquoise;">
+        <span>AAKI</span><br /><br />
+    </div>
+    
+    <script>
+        $("#div5 span").draggable({
+            containment: "#div5"
+        });
+        $("#div6").draggable({
+            axis: "x"
+        }
+        );
+        </script>
+        <img src="C:/Users/bhavy/Desktop/saturo image.png" height="100px" width="100px">
+
+    </body>
+    </html>

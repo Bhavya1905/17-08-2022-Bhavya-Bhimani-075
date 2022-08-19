@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Vanilla js</title>
+        <style type="text/css">
+            body{
+                background-color:aquamarine;}
+                div{
+                    height:400px;
+                    width:300px;
+                    background-color: azure;
+                }
+        </style>
+        <script>
+            function internalAlert(){
+                alert("Hello Student!!");
+            }
+            function internalConfirm(){
+                if(confirm("Are You Sure???"))
+                {
+                    alert("YESSSS");
+                }
+                else
+                {
+                    alert("NOOOO");
+                }
+            }
+            function internalprompt(){
+                var fname=prompt("Enter Your FirstName");
+                var lname=prompt("Enter YOUR LastName");
+                alter(fname+" "+lname);
+            }
+        </script>
+    </head>
+    <body>
+        <div>Silver Oak University</div>
+        <hr>
+        <input type="Button" value="Alert Inline" onclick="alert('This is Wrong')">
+        <input type="Button" value="Confirm Inline" onclick="confirm('Are You Sure??')">
+        <input type="Button" value="Prompt Inline" onclick="prompt('Enter Your Name')">
+        <hr>
+        <input type="button" value="Alert Internal" onclick=InternalAlert()>
+        <input type="button" value="Confirm Internal" onclick=InternalConfirm()>
+        <input type="button" value="Prompt Internal" onclick=InternalPrompt()>
+    </body>
+</html>
